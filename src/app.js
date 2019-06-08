@@ -6,15 +6,6 @@ const bodyParser = require('body-parser');
 
 const router = express.Router();
 
-app.get('/', (req, res) => {
-    res.send('Hello World!');
-});
- 
-app.listen(3000, () => {
-    console.log('Server up!');
-});
-
-
 //Rotas
 const index = require('./routes/index');
 // const personRoute = require('./routes/personRoute');
