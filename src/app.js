@@ -6,14 +6,20 @@ const bodyParser = require('body-parser');
 
 const router = express.Router();
 
-//Rotas
-const index = require('./routes/index');
-// const personRoute = require('./routes/personRoute');
-
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
-app.use('/', index);
-// app.use('/person', personRoute);
+//Rotas
+router.get('/', function (req, res, next) {
+    res.status(200).send({
+        title: "Project Invillia Test",
+        version: "0.0.1"
+    });
+});
+
+app.use('/', router);
+
+const jogadorRouter = require('./app/jogador/jogadorRoutes');
+app.use('/jogador/', jogadorRouter);
 
 module.exports = app;
