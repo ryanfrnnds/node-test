@@ -21,18 +21,17 @@ class JogadorController {
     }
  
     remove(id) {
-        const keys = Array.from(this.jogadores.keys());
         this.jogadores.delete(id);
     }
  
     save(jogador) {
         if (this.getById(jogador.id) !== undefined) {
             this.jogadores[jogador.id] = jogador;
-            return "Atualizado jogador com ID: " + jogador.id;
+            return 'Atualizado jogador com ID: ' + jogador.id;
         }
         else {
             this.jogadores.set(jogador.id, jogador);
-            return "Adicionado jogador com id=" + jogador.id;
+            return 'Adicionado jogador com id=' + jogador.id;
         }
     }
 }

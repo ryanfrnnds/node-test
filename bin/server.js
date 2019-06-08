@@ -16,5 +16,6 @@ function normalizaPort(val) {
 }
 
 app.listen(port, () => {
+    /* eslint-disable */
     console.log(`app listening on port ${port}`)
 })
